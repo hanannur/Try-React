@@ -2,15 +2,15 @@ import React from 'react'
 
 
 
-const cards = () => {
+const cards = ({label , count , color}) => {
   return (
-    <div className="flex space-x-4 ">
-        <div className="bg-white p-6 px-20 rounded-lg shadow-md w-1/4">
-            <h3 className="text-xl font-semibold text-gray-800">2</h3>
-            <p className="text-gray-600">Active</p>
+    
+        <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+            <h3 className={`text-2xl font-bold ${color}`}>{count}</h3>
+            <p className="text-gray-500 text-sm font-medium">{label}</p>
         </div>
        
-    </div>
+
   )
 }
 
