@@ -2,15 +2,22 @@ import React from "react";
 import Cards from "./components/cards";
 import Tasks from "./components/Tasks";
 import InputArea from "./components/InputArea";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 
 function App() {
-   const [tasks, setTasks] = useState([
-    { id: 1, text: "Welcome to your to do list!", completed: false },
-    { id: 2, text: "Click the checkbox to mark as complete", completed: false },
-    { id: 3, text: "Hover to delete items", completed: true },
-  ]);
+   const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("my_tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [
+        { id: 1, text: "Welcome to your to do list!", completed: false },
+        { id: 2, text: "Click the checkbox to mark as complete", completed: false },
+    ];
+  });
+
+  // 3. Save to localStorage whenever the 'tasks' array changes
+  useEffect(() => {
+    localStorage.setItem("my_tasks", JSON.stringify(tasks));
+  }, [tasks]); 
 
   const addTask = (text) => {
     if (text.trim() === "") return; 
