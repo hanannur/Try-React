@@ -1,16 +1,67 @@
-# React + Vite
+# React To-Do List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive To-Do List application built with React, featuring a sleek design, task filtering, and a fully functional Dark Mode powered by Zustand and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Add Tasks**: Quickly add new tasks to your list.
+- **Mark as Complete**: Toggle tasks between active and completed states.
+- **Delete Tasks**: Remove tasks you no longer need.
+- **Task Analytics**: View a summary of active, completed, and total tasks.
+- **Dark Mode**: Switch seamlessly between light and dark themes. The preference is remembered across sessions!
+- **Data Persistence**: Your tasks and theme preferences are saved locally in your browser.
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React**: Component-based UI development.
+- **Tailwind CSS V4**: Utility-first styling for beautiful and responsive design.
+- **Zustand**: Lightweight global state management for handling the theme.
+- **Vite**: Superfast frontend tooling and development server.
+- **Lucide Icons**: Beautiful open-source icons for the UI.
 
-## Expanding the ESLint configuration
+## Screenshots
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Light Mode
+![Light Mode](./public/light-mode.png)
+
+### Dark Mode
+![Dark Mode](./public/dark-mode.png)
+
+*(Note: Please rename your screenshots to `light-mode.png` and `dark-mode.png` and place them inside the `public/` folder so they appear properly here and on GitHub.)*
+
+## Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine.
+
+### Prerequisites
+
+Make sure you have Node.js installed on your machine.
+
+### Installation
+
+1. Clone the repository or download the source code.
+2. Navigate into the project directory:
+   ```bash
+   cd react_basics
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the App
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+Open your browser and navigate to the URL provided in the terminal (usually `http://localhost:5173`).
+
+## Project Structure
+
+- `src/components/`: Contains all the reusable UI components (`InputArea`, `Tasks`, `Cards`, `ThemeToggle`).
+- `src/store/`: Contains the Zustand store (`useThemeStore.js`) for global state management.
+- `src/App.jsx`: The main application container integrating all components and logic.
+- `src/main.jsx`: The React entry point.
